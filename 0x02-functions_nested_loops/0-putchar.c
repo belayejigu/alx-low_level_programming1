@@ -1,23 +1,13 @@
-#include <stdio.h>
-#include "main.h"
+#include <unistd.h>
 
 /**
- * main - first program
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
  *
- * Description: Writing functions
- *
- * Return: always 0 (success)
-*/
-int main(void)
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
 {
-	int i;
-	char *word = "_putchar";
-
-	for (i = 0; i < 8; i++)
-	{
-		_putchar(word[i]);
-	}
-
-	_putchar('\n');
-	return (0);
+	return (write(1, &c, 1));
 }
